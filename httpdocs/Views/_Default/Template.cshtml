@@ -1,0 +1,9 @@
+﻿@model EasywebTemplateViewModel
+@{
+    Layout = null;
+}
+@* 
+    Will render a main view without layout for ajax requests (set in _ViewStart.cshtml)
+    and possibly provided subkey to only render a part of a view. Solely used for endpoint /template/[url]?key=[key] to fetch single template content via ajax-requests.
+ *@
+<ew-template for-key="@Model.SubKey" />

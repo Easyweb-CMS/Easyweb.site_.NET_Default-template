@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <style type="text/css">
+        body { font-family: sans-serif; text-align: center;padding-top: 60px;}
+        h1 { margin-top: 50px; margin-bottom: 20px; }
+        p { margin-bottom: 20px; }
+        img { max-width: 400px; margin: 0 auto; }
+        #error-page { max-width: 900px; margin: auto; }
+        ul.rellinks { list-style: none; margin-left:0;padding-left:0; }
+    </style>
+</head>
+<body>
+    <div id="wrapper" class="container">
+        <section id="page">
+            <div id="error-page">
+                <a href="/"><img src="{{logo}}" style="padding: 40px; margin-bottom: 30px; display: block;" /></a>
+                <h1>{{label}}</h1>
+                <div class="ew">
+                    <p class="text-muted">{{message}}</p>
+                    <div class="related-links">
+                        <ul class="rellinks">
+                            <li><a href="/">Start</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+@model MenuFeature
+@* Compared to 90% of everything else rendered, the default Menu has a custom Model it renders below.
+   A menu options rendering the menu like other studio view/elements exists, but is not yet set to default.
+*@
+
+<nav>
+    <ul class="mainmenu">
+        @foreach (var menu in Model.Nodes)
+        {
+            <li ew-active-class="active" ew-active-for="@menu" class="dropdown">
+                <a ew-href="@menu">
+                    @menu.Label
+                </a>
+                <span class="dropdown-arrow" ew-if="@menu.Children" aria-label="open submenu">
+                </span>
+                <ul class="submenu" ew-if="@menu.Children">
+                    @foreach (var childNode in menu.Children)
+                    {
+                        <li ew-active-class="active" ew-active-for="@childNode">
+                            <a ew-href="@childNode">@childNode.Label</a>
+                        </li>
+                    }
+                </ul>
+            </li>
+        }
+    </ul>
+</nav>

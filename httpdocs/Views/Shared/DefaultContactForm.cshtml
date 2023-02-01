@@ -1,0 +1,84 @@
+﻿@model FormFeature
+@* Compared to 90% of everything else rendered, the default contact form has a custom Model it renders below. *@
+@{
+    var hasFileInput = Model.WebContents.Any(wc => wc.Value?.Equals(FormInputType.File.Value, StringComparison.OrdinalIgnoreCase) ?? false);
+    var encTypeAttribute = hasFileInput ? "multipart/form-data" : "application/x-www-form-urlencoded";
+}
+
+<div class="@Model.CssClass" ew-if="@Model.WebContents">
+    <form class="pro-form" method="post" enctype="@encTypeAttribute">
+
+        @foreach (var input in Model.WebContents)
+        {
+            #region
+            var required = (input.Options as InputTypeDataOptions)?.Required ?? true;
+            var whenRequiredClass = required ? "form-req" : "";
+
+            var textType = input.Label == "E-post" || input.Label == "Email" ? "email" : "text";
+            var placeholder = input.Label + (required ? " *" : "");
+
+            var isTextBoxInput = input.Value == FormInputType.Text.Value;
+            var isTextAreaInput = input.Value == FormInputType.TextArea.Value;
+            var isCheckboxInput = input.Value == FormInputType.Checkbox.Value;
+            var isFileInput = input.Value == FormInputType.File.Value;
+            #endregion
+
+            @*
+
+                   Text input (textbox)
+            --------------------------------------------- *@
+            <div class="form-label-group @whenRequiredClass" ew-if="@isTextBoxInput">
+                <input type="@textType" name="@input.Label" id="@input.Label" class="form-control" placeholder="@placeholder" ew-required="required" />
+                <label for="@input.Label">@placeholder <span class="text-danger" ew-required-message-for="@input.Label"></span></label>
+            </div>
+
+            @*
+
+                   Multiline input (textarea)
+            --------------------------------------------- *@
+            <div class="form-label-group @whenRequiredClass" ew-if="@isTextAreaInput">
+                <textarea name="@input.Label" id="@input.Label" class="form-control" placeholder="@placeholder" ew-required="required"></textarea>
+                <label for="@input.Label">@placeholder <span class="text-danger" ew-required-message-for="@input.Label"></span></label>
+            </div>
+
+            @*
+
+                   Checkbox-input
+            --------------------------------------------- *@
+            <div class="checkbox form-checkbox" ew-if="@isCheckboxInput" style="padding: 10px 0 30px 15px">
+                <label class="@whenRequiredClass">
+                    <input type="checkbox" name="@input.Label" value="@SiteEnvironment.Localizer.Get("FormSelected", "Vald")" ew-required="required" />
+                    @input.Label
+                </label>
+                <span class="text-danger" ew-required-message-for="@input.Label"></span>
+            </div>
+
+            @*
+
+                   Upload file-iunput
+            --------------------------------------------- *@
+            <div class="form-label-group form-file" ew-if="@isFileInput">
+                <label class="@whenRequiredClass">@input.Label </label>
+                <input type="file" name="@input.Label" class="form-control" ew-required="required" />
+                <span class="text-danger" ew-required-message-for="@input.Label"></span>
+            </div>
+        }
+
+        @*  Validation errors on callback  *@
+        <div asp-validation-summary="ModelOnly"></div>
+
+        @*  Hidden fields -> Article-id, honeypot  *@
+        <input class="formfield" name="__articleId" type="hidden" value="@Article?.Id">
+        @Html.PrintCustomEmptyCaptcha()
+
+        @* 
+            ---------------------------------           *@
+        <div class="form-group form-action">
+            <button type="submit" class="button" ew-translate>Send message</button>
+        </div>
+
+    </form>
+</div>
+@* For a list with objects that isn't valid, use: *@
+@*<div class="validation-summary-valid" data-valmsg-summary="true"><ul><li style="display:none"></li></ul></div>*@
+

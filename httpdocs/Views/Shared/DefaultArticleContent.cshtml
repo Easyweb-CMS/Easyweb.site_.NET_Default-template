@@ -1,0 +1,12 @@
+﻿@* Print the default contents for an article, aka label, introduction, contents, relimgs and rellinks *@
+<ew-template for-key="Image" from-parents="true" />
+<main class="ew ew-article-section">
+    <h1 ew-for="$label"></h1>
+    <div class="ew-introduction">
+        <p ew-for="$introduction"></p>
+    </div>
+    <div class="ew">
+        <ew-template for-key="$content" />
+    </div>
+    <ew-template for-key="Link" from-parents="true" />
+</main>

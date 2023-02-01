@@ -1,0 +1,15 @@
+﻿@inherits ViewTemplatePage<TModel>
+@using Easyweb.Site
+@using Easyweb.Site.Infrastructure
+@using Easyweb.Site.Infrastructure.Extensions
+@using Easyweb.Site.Core
+@using Easyweb.Site.Core.Templates
+@using Easyweb.Site.Core.Extensions
+@using Easyweb.Site.Core.Extensions.Text
+@using Easyweb.Site.TagHelpers
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@addTagHelper *, Easyweb.Site.TagHelpers
+@addTagHelper *, Easyweb.Site.Infrastructure
+@*
+    This _ViewImports.cshtml sets all views in/under the same folder to inherit from our custom view page that allows our custom base data to be used in all views.
+    ALso sets the namespaces available in those views, and sets the tag helper namesspaces available for use. *@

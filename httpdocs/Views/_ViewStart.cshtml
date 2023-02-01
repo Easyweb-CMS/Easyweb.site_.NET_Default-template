@@ -1,0 +1,11 @@
+﻿@* This file affects all views in or under the same folder *@
+@{
+    @* If ajax request, skip layout *@
+    if (RequestContext.IsAjaxRequest && !ViewContext.HttpContext.Request.Query.ContainsKey("layout")) {
+        Layout = null;
+    }
+    @* Otherwise, set layout *@ 
+    else {
+        Layout = "_Layout";
+    }
+}

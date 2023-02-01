@@ -1,0 +1,18 @@
+﻿<footer>
+    <div class="inner">
+        <ew-template />
+        <div>
+            <h4>@SiteContext.Office.Label</h4>
+            <address>
+                <span>@SiteContext.Office.Address</span>
+                <span>@SiteContext.Office.City</span>
+                <span><a href="mailto:@SiteContext.Office.Email">@SiteContext.Office.Email</a></span>
+                <span>@SiteContext.Office.Phone</span>
+            </address>
+        </div>
+
+        <div class="bottom-footer">
+            <div class="ew-copyright">&copy; @DateTime.Now.Year - @SiteContext.Office.Label</div>
+        </div>
+    </div>
+</footer>
