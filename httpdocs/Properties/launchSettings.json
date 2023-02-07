@@ -2,6 +2,7 @@
     "iisSettings": {
         "windowsAuthentication": false,
         "anonymousAuthentication": true,
+        "dotnetRunMessages": true,
         "iisExpress": {
             "applicationUrl": "http://localhost:4435",
             "sslPort": 44350
@@ -11,6 +12,7 @@
         "EW Dev - IIS Express": {
             "commandName": "IISExpress",
             "launchBrowser": true,
+            "dotnetRunMessages": true,
             "environmentVariables": {
                 "ASPNETCORE_ENVIRONMENT": "Development"
             }
@@ -24,6 +26,7 @@
         "EW - Kestrel": {
             "commandName": "Project",
             "launchBrowser": true,
+            "dotnetRunMessages": true,
             "environmentVariables": {
                 "ASPNETCORE_ENVIRONMENT": "Development"
             },
