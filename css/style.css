@@ -16,9 +16,6 @@ html, body {
 }
 
 /* Header / Footer */
-header {
-
-}
 
 footer, header .inner {
     width: 100%;
@@ -40,8 +37,6 @@ header .logotype img {
     display: block;
 }
 
-footer {
-}
 
 /* Main menu */
 .mainmenu {
@@ -140,6 +135,9 @@ section.standard {
 }
 
 .text-image .image {
+    background-color:#eef8f9;
+    min-height: 400px;
+
 }
 
 .text-image .image img {
