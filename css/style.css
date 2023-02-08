@@ -37,6 +37,18 @@ header .logotype img {
     display: block;
 }
 
+footer .inner{
+    width: 100%;
+    display:flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 3rem 0;
+}
+
+footer .inner a{
+    color: #000;
+}
+
 
 /* Main menu */
 .mainmenu {
@@ -202,26 +214,3 @@ section.standard {
 .news-list article.news-item .text {
 }
 
-/*Table */
-table{
-    border-collapse: collapse;
-  }
-
-tr:nth-of-type(even) {
-    background: #d1d5d9;
-  }
-
-
-th {
-    background-color: #708090;
-    color: white;
-    font-weight: bold;
-    padding: 0.5em 0.375em;
-    text-align: center;
-    border: 1px solid #aaa;
-  }
-
-  td{
-    border: 1px solid #aaa;
-    padding: 5px;
-  }
