@@ -16,6 +16,9 @@
 
     <PropertyGroup>
         <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+		<PreserveCompilationReferences>true</PreserveCompilationReferences>
+		<CopyRazorGenerateFilesToPublishDirectory>true</CopyRazorGenerateFilesToPublishDirectory>
+		<CopyRefAssembliesToPublishDirectory>true</CopyRefAssembliesToPublishDirectory>
     </PropertyGroup>
 
     <!-- Files normally not desirable to include in publish packages since server versions might differ -->
@@ -58,6 +61,14 @@
         <Content Include="Resources\StaticError.html">
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </Content>
+    </ItemGroup>
+    <ItemGroup>
+      <None Update="css\**">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="js\**">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
     </ItemGroup>
     
 </Project>

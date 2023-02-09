@@ -108,7 +108,8 @@ namespace Easyweb
                 // 1. Setting additional view locations (/Views, /Views/[Module], /Views/_Layout, /Views/_Default, /Views/_Templates), 
                 // 2. Adds localization view subfolder expander (Ex. Home/Views/en-US/Index.chtml)
                 // 3. Sets JSON-serializer to use camelCase and ignore reference loop handling, latest compat-version and data annotation localization
-                .AddEasywebMvcConfig(Configuration);
+                .AddEasywebMvcConfig(Configuration)// Allows recomilation on view change in both production and development.
+                .AddRazorRuntimeCompilation();
 
             // Allows recomilation on view change in development.
             if (_env.IsDevelopment())
