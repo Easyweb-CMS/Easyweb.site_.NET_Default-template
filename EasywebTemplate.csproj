@@ -23,9 +23,7 @@
 
     <!-- Files normally not desirable to include in publish packages since server versions might differ -->
     <ItemGroup>
-        <Content Update="web.config" CopyToPublishDirectory="Never" />
         <Content Update="appsettings.Development.json" CopyToPublishDirectory="Never" />
-        <Content Update="appsettings.json" CopyToPublishDirectory="Never" />
     </ItemGroup>
 
     <!-- Folders that might be created locally on runtime, but is never part of project.-->
