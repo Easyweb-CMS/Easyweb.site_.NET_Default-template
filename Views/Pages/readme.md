@@ -1,0 +1,1 @@
+The pages folder is for templates created under the default module "Pages" in the studio

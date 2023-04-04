@@ -12,7 +12,7 @@
         "EW Dev - IIS Express": {
             "commandName": "IISExpress",
             "launchBrowser": true,
-            "dotnetRunMessages": true,
+            "dotnetRunMessages": true,  
             "environmentVariables": {
                 "ASPNETCORE_ENVIRONMENT": "Development"
             }
@@ -30,7 +30,7 @@
             "environmentVariables": {
                 "ASPNETCORE_ENVIRONMENT": "Development"
             },
-            "applicationUrl": "https://localhost:44350;http://localhost:4435"
+            "applicationUrl": "http://localhost:4435;https://localhost:44350"
         }
     }
 }
