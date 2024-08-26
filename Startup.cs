@@ -20,6 +20,7 @@ using Easyweb.Site;
 using Easyweb.Site.Core.Imaging;
 using System.IO;
 using Microsoft.Extensions.FileProviders;
+using Easyweb.Site.RuntimeCompilation;
 
 namespace Easyweb
 {
@@ -75,11 +76,11 @@ namespace Easyweb
             // Adds custom json localization services found in /Resources, provided through IStringLocalizer or <ew-translate />-taghelper
             //
             // Adds possible startup-injections from plugins
-            services.AddEasywebDefaults(Configuration);
+            services.AddEasywebDefaults();
 
             // Registers required data services to fetch CMS-data from Easyweb API through a custom LINQ to Easyweb API-provider
             //
-            services.RegisterDataServices(Configuration);
+            services.AddEasywebDataSource();
 
             // Thumbnailgenerator for automatically creating thumbnails from requested images for Windows-systems.
             // Replace the inejcted generator to provide equal functionality for non-windows-systems.
@@ -109,7 +110,7 @@ namespace Easyweb
                 // 2. Adds localization view subfolder expander (Ex. Home/Views/en-US/Index.chtml)
                 // 3. Sets JSON-serializer to use camelCase and ignore reference loop handling, latest compat-version and data annotation localization
                 .AddEasywebMvcConfig(Configuration)// Allows recomilation on view change in both production and development.
-                .AddRazorRuntimeCompilation();
+                .AddCachedRazorRuntimeCompilation();
 
             // Allows recomilation on view change in development.
             if (_env.IsDevelopment())

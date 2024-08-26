@@ -12,7 +12,14 @@ html, body {
 }
 
 #page {
-    width: 100%;
+    width: 80%;
+    margin: auto;
+}
+
+@media screen and (max-width: 640px) {
+    #page {
+        width: 95%;
+    }
 }
 
 /* Header / Footer */
