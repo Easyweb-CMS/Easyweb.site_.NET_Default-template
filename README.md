@@ -1,6 +1,6 @@
 # Easyweb.site plain example template
 
-Simple and plain .NET 6 starting template for creating content using Easyweb CMS and ew-tag-pack.
+Simple and plain .NET 8 starting template for creating content using Easyweb CMS and ew-tag-pack.
 
 1. If you haven't created an Easyweb account yet, sign up at https://app.easyweb.se/account/createaccount
 
@@ -8,7 +8,7 @@ Simple and plain .NET 6 starting template for creating content using Easyweb CMS
 
 3. Once you have an account and a site, enable your API-key by clicking the cloud in the top bar and creating a new API-key. Copy the OAuth2 API-credentals to appSettings.json -> ApiSettings where the values are marked with x's. Replace DataOptions/UnionId/"xxxx" with your 4 digit union-/site id (seen in the end of your endpointRoot, ``/extapi/[here]``). 
 
-4. Run teh app to make sure your connection is up running and working
+4. Run the app to make sure your connection is up running and working
 
 5. Start building using the studio in Easyweb and the tag helpers provided by the Easyweb.site-packages, such as:
 
