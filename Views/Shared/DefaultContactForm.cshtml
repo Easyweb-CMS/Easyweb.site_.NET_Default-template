@@ -10,7 +10,6 @@
 
         @foreach (var input in Model.WebContents)
         {
-            #region
             var required = (input.Options as InputTypeDataOptions)?.Required ?? true;
             var whenRequiredClass = required ? "form-req" : "";
 
@@ -21,7 +20,6 @@
             var isTextAreaInput = input.Value == FormInputType.TextArea.Value;
             var isCheckboxInput = input.Value == FormInputType.Checkbox.Value;
             var isFileInput = input.Value == FormInputType.File.Value;
-            #endregion
 
             @*
 
